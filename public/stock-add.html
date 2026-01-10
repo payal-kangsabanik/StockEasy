@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockEasy - Add Stock</title>
+  <link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="premium-styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-circle"></div> StockEasy
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stock-list.html" class="active">Stock</a>
+      <a href="customer.html">Customer</a>
+      <a href="payment.html">Payment</a>
+      <a href="reports.html">Reports</a>
+      <a href="sales.html">Sales</a>
+      <a href="admin-dashboard.html">Admin</a>
+      <a href="signin.html" class="register">Log Out</a>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <section class="form-section">
+    <h1>📦 Add New Stock</h1>
+    <p>Enter medicine details to add to your inventory</p>
+
+    <!-- Back Button -->
+    <div class="actions">
+      <button class="btn" onclick="window.location.href='dashboard.html'">
+        <i class="fa fa-arrow-left"></i> Back to Dashboard
+      </button>
+    </div>
+
+    <form id="addStockForm">
+      <div class="form-grid">
+        <input type="text" id="batchNo" placeholder="Batch Number *" required>
+        <input type="text" id="medicineName" placeholder="Medicine Name *" required>
+        <input type="text" id="manufacturer" placeholder="Manufacturer *" required>
+        <input type="date" id="manfDate" placeholder="Manufacturing Date *" required>
+        <input type="date" id="expDate" placeholder="Expiry Date *" required>
+        <input type="number" id="buyingCost" placeholder="Buying Cost *" required>
+        <input type="number" id="mrp" placeholder="MRP *" required>
+        <input type="number" id="discount" placeholder="Discount %" required>
+        <input type="number" id="consumerCost" placeholder="Consumer Cost *" required>
+        <select id="prescription" required>
+          <option value="">Prescription Required? *</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">
+        <i class="fa fa-save"></i> Save Stock
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h2 class="footer-logo">StockEasy</h2>
+
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Legal</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <h3 class="footer-subtitle">Stay in touch</h3>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+    </div>
+
+    <p class="footer-copy">© StockEasy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>

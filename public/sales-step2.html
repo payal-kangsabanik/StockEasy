@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockEasy - Sales Step 2</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="premium-styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-circle"></div> StockEasy
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stock-list.html">Stock</a>
+      <a href="customer.html">Customer</a>
+      <a href="payment.html">Payment</a>
+      <a href="reports.html">Reports</a>
+      <a href="sales.html" class="active">Sales</a>
+      <a href="admin-dashboard.html">Admin</a>
+      <a href="signin.html" class="register">Log Out</a>
+    </nav>
+  </header>
+
+  <!-- Sales Step 2 -->
+  <section class="sales-step">
+    <div class="sales-left">
+      <button class="btn add">Add Record ➕</button>
+      <button class="btn view">View Record 👁</button>
+      <button class="btn sell active">Sell 🛒</button>
+
+      <table class="sales-table">
+        <thead>
+          <tr>
+            <th>Medicine Name</th>
+            <th>Medicine Manf.</th>
+            <th>QTY</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paracetamol</td>
+            <td>ABC Pharma</td>
+            <td>10</td>
+            <td>₹200</td>
+          </tr>
+          <tr>
+            <td>Ibuprofen</td>
+            <td>XYZ Labs</td>
+            <td>5</td>
+            <td>₹150</td>
+          </tr>
+          <tr>
+            <td>Amoxicillin</td>
+            <td>PharmaPlus</td>
+            <td>8</td>
+            <td>₹180</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="customer-info">
+        <input type="text" placeholder="Customer Name">
+        <input type="text" placeholder="Phone No.">
+        <input type="email" placeholder="Email ID">
+        <input type="text" placeholder="Total Price to Pay">
+        <input type="text" placeholder="Amount">
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn decline">Decline</button>
+        <button class="btn confirm">Confirm</button>
+      </div>
+    </div>
+
+    <div class="sales-right">
+      <h2>StockEasy</h2>
+      <p>Now it is very easy to maintain stock.<br>Save your time and enjoy the day.</p>
+      <img src="assets/illustration.jpg" alt="Illustration" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copy">© StockEasy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>

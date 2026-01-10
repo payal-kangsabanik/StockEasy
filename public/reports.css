@@ -1,0 +1,84 @@
+/* ===============================
+   REPORTS PAGE STYLING
+   =============================== */
+
+/* Layout container */
+.report-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 40px auto;
+  max-width: 1400px;
+  padding: 0 20px;
+}
+
+/* Chart grid layout */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Chart cards */
+.chart-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Canvas (charts) */
+canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Filter buttons */
+.filter-btns {
+  text-align: center;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.filter-btns .btn {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.filter-btns .btn:hover {
+  background-color: #ffebe0;
+  border-color: #ff6633;
+  color: #ff6633;
+}
+
+.filter-btns .btn.active {
+  background-color: #ff6633;
+  color: #fff;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  canvas {
+    height: 320px !important;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockEasy - Sales</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="premium-styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-circle"></div> StockEasy
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stock-list.html">Stock</a>
+      <a href="customer.html">Customer</a>
+      <a href="payment.html">Payment</a>
+      <a href="reports.html">Reports</a>
+      <a href="sales.html" class="active">Sales</a>
+      <a href="admin-dashboard.html">Admin</a>
+      <a href="signin.html" class="register">Log Out</a>
+    </nav>
+  </header>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="btn add">Add Record ➕</button>
+    <button class="btn view">View Record 👁</button>
+    <button class="btn sell" id="sellBtn">Sell 🛒</button>
+  </div>
+
+  <!-- Table -->
+  <section class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Batch No</th>
+          <th>Med Name</th>
+          <th>Manf. Name</th>
+          <th>Manf Date</th>
+          <th>Exp. Date</th>
+          <th>Buying Cost</th>
+          <th>MRP</th>
+          <th>Discount Cost</th>
+          <th>Consumer Cost</th>
+          <th>Prescription</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated by script.js -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h2 class="footer-logo">StockEasy</h2>
+
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Legal</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <h3 class="footer-subtitle">Stay in touch</h3>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+    </div>
+
+    <p class="footer-copy">© StockEasy. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('sellBtn').addEventListener('click', () => {
+      window.location.href = 'sales-step1.html';
+    });
+  </script>
+</body>
+
+</html>

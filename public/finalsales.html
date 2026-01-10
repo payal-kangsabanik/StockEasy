@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockEasy - Sales</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="premium-styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-circle"></div> StockEasy
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stock-list.html">Stock</a>
+      <a href="customer.html">Customer</a>
+      <a href="payment.html">Payment</a>
+      <a href="reports.html">Reports</a>
+      <a href="sales.html" class="active">Sales</a>
+      <a href="admin-dashboard.html">Admin</a>
+      <a href="signin.html" class="register">Log Out</a>
+    </nav>
+  </header>
+
+  <!-- Filters -->
+  <div class="filter-btns">
+    <button class="btn active">All</button>
+    <button class="btn">Last 6 Months</button>
+    <button class="btn">Last 3 Months</button>
+    <button class="btn">Current Month</button>
+    <button class="btn">Current Week</button>
+    <button class="btn">Today</button>
+  </div>
+
+  <!-- Radio Filters -->
+  <div class="radio-filters">
+    <label><input type="radio" name="filter" checked /> Date Wise</label>
+    <label><input type="radio" name="filter" /> Customer Wise</label>
+  </div>
+
+  <!-- Table -->
+  <section class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Phone No.</th>
+          <th>Email ID</th>
+          <th>Sales</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>9876543210</td>
+          <td>john@gmail.com</td>
+          <td>1250</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>8765432109</td>
+          <td>jane@gmail.com</td>
+          <td>980</td>
+        </tr>
+        <tr>
+          <td>Sam Wilson</td>
+          <td>7890654321</td>
+          <td>sam@gmail.com</td>
+          <td>2100</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h2 class="footer-logo">StockEasy</h2>
+
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Legal</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <h3 class="footer-subtitle">Stay in touch</h3>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+    </div>
+
+    <p class="footer-copy">© StockEasy. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

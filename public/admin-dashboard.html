@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StockEasy - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="premium-styles.css" />
+    <link rel="stylesheet" href="admin-dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-circle"></div>
+            StockEasy
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stock-list.html">Stock</a>
+            <a href="customer.html">Customer</a>
+            <a href="payment.html">Payment</a>
+            <a href="reports.html">Reports</a>
+            <a href="sales.html">Sales</a>
+            <a href="admin-dashboard.html" class="active">Admin</a>
+            <a href="signin.html" class="register">Log Out</a>
+        </nav>
+    </header>
+
+    <!-- Admin Dashboard Content -->
+    <main class="admin-container">
+        <!-- Page Title -->
+        <div class="admin-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Comprehensive overview and management of your inventory system</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-refresh" onclick="refreshDashboard()">
+                    <i class="fa fa-refresh"></i> Refresh
+                </button>
+                <button class="btn-export" onclick="exportData()">
+                    <i class="fa fa-download"></i> Export Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card stat-primary">
+                <div class="stat-icon">
+                    <i class="fa fa-boxes"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalStock">0</h3>
+                    <p>Total Stock Items</p>
+                    <span class="stat-change positive">
+                        <i class="fa fa-arrow-up"></i> 12% from last month
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-success">
+                <div class="stat-icon">
+                    <i class="fa fa-dollar-sign"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalRevenue">$0</h3>
+                    <p>Total Revenue</p>
+                    <span class="stat-change positive">
+                        <i class="fa fa-arrow-up"></i> 8% from last month
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-warning">
+                <div class="stat-icon">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalCustomers">0</h3>
+                    <p>Total Customers</p>
+                    <span class="stat-change positive">
+                        <i class="fa fa-arrow-up"></i> 5% from last month
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-danger">
+                <div class="stat-icon">
+                    <i class="fa fa-exclamation-triangle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="lowStock">0</h3>
+                    <p>Low Stock Alerts</p>
+                    <span class="stat-change negative">
+                        <i class="fa fa-arrow-down"></i> Needs attention
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Sales Overview</h2>
+                    <select id="salesPeriod" onchange="updateSalesChart()">
+                        <option value="week">Last 7 Days</option>
+                        <option value="month" selected>Last 30 Days</option>
+                        <option value="year">Last Year</option>
+                    </select>
+                </div>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Stock Distribution</h2>
+                    <select id="stockPeriod">
+                        <option value="category">By Category</option>
+                        <option value="manufacturer">By Manufacturer</option>
+                    </select>
+                </div>
+                <canvas id="stockChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Recent Activity & Quick Actions -->
+        <div class="activity-section">
+            <div class="recent-activity">
+                <div class="section-header">
+                    <h2><i class="fa fa-clock"></i> Recent Activity</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="activity-list" id="activityList">
+                    <!-- Activity items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <div class="section-header">
+                    <h2><i class="fa fa-bolt"></i> Quick Actions</h2>
+                </div>
+                <div class="actions-grid">
+                    <button class="action-btn" onclick="window.location.href='stock-add.html'">
+                        <i class="fa fa-plus-circle"></i>
+                        <span>Add Stock</span>
+                    </button>
+                    <button class="action-btn" onclick="window.location.href='sales-step1.html'">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>New Sale</span>
+                    </button>
+                    <button class="action-btn" onclick="openCustomerModal()">
+                        <i class="fa fa-user-plus"></i>
+                        <span>Add Customer</span>
+                    </button>
+                    <button class="action-btn" onclick="window.location.href='reports.html'">
+                        <i class="fa fa-chart-line"></i>
+                        <span>View Reports</span>
+                    </button>
+                    <button class="action-btn" onclick="generateInvoice()">
+                        <i class="fa fa-file-invoice"></i>
+                        <span>Generate Invoice</span>
+                    </button>
+                    <button class="action-btn" onclick="manageUsers()">
+                        <i class="fa fa-users-cog"></i>
+                        <span>Manage Users</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables Section -->
+        <div class="tables-section">
+            <!-- Low Stock Table -->
+            <div class="table-wrapper">
+                <div class="section-header">
+                    <h2><i class="fa fa-exclamation-circle"></i> Low Stock Items</h2>
+                    <a href="stock-list.html" class="view-all">View All Stock</a>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Medicine Name</th>
+                                <th>Batch No</th>
+                                <th>Quantity</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lowStockTable">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Sales Table -->
+            <div class="table-wrapper">
+                <div class="section-header">
+                    <h2><i class="fa fa-shopping-bag"></i> Recent Sales</h2>
+                    <a href="sales.html" class="view-all">View All Sales</a>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product</th>
+                                <th>Customer</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentSalesTable">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 class="footer-logo">StockEasy</h2>
+
+        <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <h3 class="footer-subtitle">Stay in touch</h3>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+
+        <p class="footer-copy">© StockEasy. All Rights Reserved.</p>
+    </footer>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockEasy - Register</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="premium-styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-circle"></div>
+      StockEasy
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stock-list.html">Stock</a>
+      <a href="customer.html">Customer</a>
+      <a href="payment.html">Payment</a>
+      <a href="reports.html">Reports</a>
+      <a href="sales.html">Sales</a>
+      <a href="admin-dashboard.html">Admin</a>
+      <a href="signin.html" class="register">Sign In</a>
+    </nav>
+  </header>
+
+  <!-- Registration Section -->
+  <section class="container">
+    <div class="form-section">
+      <h1>StockEasy</h1>
+      <p>Now it is very easy to maintain stock.<br>Save your time and enjoy the day.</p>
+
+      <form id="registerForm">
+        <div class="grid-3">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Middle Name">
+          <input type="text" placeholder="Last Name" required>
+        </div>
+        <input type="text" placeholder="Business Name" required>
+        <div class="grid-3">
+          <input type="text" placeholder="Country" required>
+          <input type="text" placeholder="City" required>
+          <input type="text" placeholder="State" required>
+        </div>
+        <div class="grid-2">
+          <input type="text" placeholder="Street Number" required>
+          <input type="text" placeholder="Pin Code" required>
+        </div>
+        <input type="email" id="registerEmail" placeholder="Email Id" required>
+        <div class="grid-2">
+          <input type="text" placeholder="Phone Number" required>
+          <input type="text" placeholder="Alternative Phone Number">
+        </div>
+        <div class="grid-2">
+          <input type="text" placeholder="GST Number" required>
+          <input type="text" placeholder="Aadhaar Number" required>
+        </div>
+        <div class="grid-2">
+          <input type="text" placeholder="Pan Card Number" required>
+          <input type="text" placeholder="Certificate Number" required>
+        </div>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+
+        <button type="submit" class="btn">Register</button>
+        <p class="links">Have you already an account? <a href="signin.html">Sign In Here</a></p>
+      </form>
+    </div>
+
+    <div class="illustration">
+      <img src="assets/illustration.jpg" alt="Doctors Illustration">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h2 class="footer-logo">StockEasy</h2>
+
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Legal</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <h3 class="footer-subtitle">Stay in touch</h3>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+    </div>
+
+    <p class="footer-copy">© StockEasy. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>
